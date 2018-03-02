@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:id="@+id/teleopEntryTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="Teleop"
+        android:textColor="#000000"/>
+    <CheckBox
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teleopEntryTitle"
+        android:id="@+id/cube_on_switch"
+        android:text="Cube on switch?"
+        android:textSize="30sp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cube_on_switch"
+        android:id="@+id/cube_on_scale"
+        android:text="Cube on scale?"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cube_on_scale"
+        android:text="Cubes to vault   "
+        android:id="@+id/cubes_to_vault_text"
+        android:textSize="30sp"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cubes_to_vault_text"
+        android:layout_below="@+id/cube_on_scale"
+        android:id="@+id/cubes_to_vault_decrement"
+        android:text="-"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cubes_to_vault_display"
+        android:layout_toRightOf="@+id/cubes_to_vault_decrement"
+        android:layout_below="@+id/cube_on_scale"
+        android:text="   0   "
+        android:textSize="30sp"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cube_on_scale"
+        android:layout_toRightOf="@+id/cubes_to_vault_display"
+        android:id="@+id/cubes_to_vault_increment"
+        android:text="+"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cubes_to_vault_decrement"
+        android:text="Endgame"
+        android:id="@+id/endgame"
+        android:layout_centerHorizontal="true"
+        android:textSize="60sp"
+        android:textColor="#000000"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On platform?"
+        android:id="@+id/on_platform"
+        android:layout_below="@+id/endgame"
+        android:textSize="30sp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/on_platform"
+        android:text="Successful climb?"
+        android:id="@+id/climbed"
+        android:textSize="30sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"
+        android:text="Save Data"
+        android:layout_alignParentBottom="true"
+        android:textSize="30sp"/>
+</RelativeLayout>
