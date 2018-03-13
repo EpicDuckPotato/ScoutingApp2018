@@ -20,8 +20,8 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class AutoEntryActivity extends AppCompatActivity {
     String[] data;
-    ViewFlipper fieldImages;
-    int currentFieldLayout;
+    //ViewFlipper fieldImages;
+    //int currentFieldLayout;
     Spinner startPos;
     ArrayAdapter<CharSequence> startPosAdapter;
     CheckBox crossedALine;
@@ -30,6 +30,12 @@ public class AutoEntryActivity extends AppCompatActivity {
     CheckBox cubeOnPlate;
     Button toTeleop;
     String alliance;
+
+    CheckBox checkLL;
+    CheckBox checkLR;
+    CheckBox checkRL;
+    CheckBox checkRR;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -44,6 +50,8 @@ public class AutoEntryActivity extends AppCompatActivity {
         }
         alliance = intent.getStringExtra("Alliance");
 
+        //former ViewFlipper code
+        /*
         fieldImages = (ViewFlipper) findViewById(R.id.field_images);
         currentFieldLayout = 0;
         if(alliance.equals("Red")){
@@ -69,7 +77,23 @@ public class AutoEntryActivity extends AppCompatActivity {
                 }
             }
         });
-
+        */
+        //new four image + four checkbox code
+        checkLL = (CheckBox)findViewById(R.id.checkLL);
+        checkLR = (CheckBox)findViewById(R.id.checkLR);
+        checkRL = (CheckBox)findViewById(R.id.checkRL);
+        checkRR = (CheckBox)findViewById(R.id.checkRR);
+        if(alliance.equals("Red")){
+            findViewById(R.id.imageLL).setBackgroundResource(R.drawable.redll);
+            findViewById(R.id.imageLR).setBackgroundResource(R.drawable.redlr);
+            findViewById(R.id.imageRL).setBackgroundResource(R.drawable.redrl);
+            findViewById(R.id.imageRR).setBackgroundResource(R.drawable.redrr);
+        }else{
+            findViewById(R.id.imageLL).setBackgroundResource(R.drawable.bluell);
+            findViewById(R.id.imageLR).setBackgroundResource(R.drawable.bluelr);
+            findViewById(R.id.imageRL).setBackgroundResource(R.drawable.bluerl);
+            findViewById(R.id.imageRR).setBackgroundResource(R.drawable.bluerr);
+        }
         startPos = (Spinner)findViewById(R.id.start_pos);
         startPosAdapter = ArrayAdapter.createFromResource(this,R.array.start_pos_ops, R.layout.spinner_layout);
         startPosAdapter.setDropDownViewResource(R.layout.spinner_layout);
@@ -89,6 +113,16 @@ public class AutoEntryActivity extends AppCompatActivity {
         toTeleop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(checkLL.isChecked()){
+                    data[3] = "LL";
+                }else if(checkLR.isChecked()){
+                    data[3] = "LR";
+                }else if(checkRL.isChecked()){
+                    data[3] = "RL";
+                }else{
+                    data[3] = "RR";
+                }
+                /*
                 switch(currentFieldLayout){
                     case 0:
                         data[3] = "LL";
@@ -106,6 +140,7 @@ public class AutoEntryActivity extends AppCompatActivity {
                         data[3] = "LL";
                         break;
                 }
+                */
                 data[4] = startPos.getSelectedItem().toString();
                 data[5] = String.valueOf(crossedALine.isChecked());
                 data[6] = destination.getSelectedItem().toString();

@@ -17,9 +17,10 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/autoEntryTitle"
         android:id="@+id/field_images_title"
-        android:text="Choose the layout of your robot's side of the field (tap image to change)"
+        android:text="Choose the layout of your robot's side of the field using the checkboxes below:"
         android:textSize="30sp"
         android:textColor="#000000"/>
+    <!--
     <ViewFlipper
         android:id="@+id/field_images"
         android:layout_width="wrap_content"
@@ -29,25 +30,74 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageLL"/><!--Left switch plate and left scale plate are the team's color-->
+            android:id="@+id/imageLL"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageLR"/><!--Left switch plate and right scale plate are the team's color-->
+            android:id="@+id/imageLR"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageRL"/><!--Right switch plate and left scale plate are the team's color-->
+            android:id="@+id/imageRL"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageRR"/><!--Right switch plate and right scale plate are the team's color-->
+            android:id="@+id/imageRR"/>
     </ViewFlipper>
+    -->
+    <ImageView
+        android:layout_below="@id/field_images_title"
+        android:layout_alignParentLeft="true"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:id="@+id/imageLL"/><!--Left switch plate and left scale plate are the team's color-->
+    <ImageView
+        android:layout_below="@id/field_images_title"
+        android:layout_toRightOf="@+id/imageLL"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:id="@+id/imageLR"/><!--Left switch plate and right scale plate are the team's color-->
+    <ImageView
+        android:layout_below="@id/field_images_title"
+        android:layout_toRightOf="@+id/imageLR"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:id="@+id/imageRL"/><!--Right switch plate and left scale plate are the team's color-->
+    <ImageView
+        android:layout_below="@id/field_images_title"
+        android:layout_toRightOf="@+id/imageRL"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:id="@+id/imageRR"/><!--Right switch plate and right scale plate are the team's color-->
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLL"
+        android:layout_alignLeft="@+id/imageLL"
+        android:id="@+id/checkLL"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLR"
+        android:layout_alignLeft="@+id/imageLR"
+        android:id="@+id/checkLR"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageRL"
+        android:layout_alignLeft="@+id/imageRL"
+        android:id="@+id/checkRL"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageRR"
+        android:layout_alignLeft="@+id/imageRR"
+        android:id="@+id/checkRR"/>
     <TextView
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/field_images"
+        android:layout_below="@+id/checkLL"
         android:id="@+id/start_pos_text"
         android:text="Starting position (see above image)"
         android:textSize="30sp"
@@ -57,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/start_pos_text"
-        android:layout_below="@+id/field_images"/>
+        android:layout_below="@+id/checkLL"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
